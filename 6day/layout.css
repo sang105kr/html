@@ -1,0 +1,35 @@
+* {margin:0; padding:0;}
+
+/* common */
+.container{ width:600px; margin:0 auto; text-align: center; }
+
+/* upper most */
+.uppermost{ background-color:#62efff; }
+.container-um{ background-color: #00bcd4; }
+/* header */
+header{ background-color:#bef67a; }
+.container-h{ background-color: #8bc34a; background-image: url("https://cdn.pixabay.com/photo/2020/02/15/22/55/couple-4852225__340.jpg"); background-position: center; background-size: cover; height: 100px;
+}
+/* nav */
+nav{ background-color: #ffcccb; }
+.container-n{ background-color: #ef9a9a; }
+/* main */
+main{ background-color: #ffc947; }
+.container-m{ outline: 3px solid red; background-color: #ff9800; overflow: hidden; }
+.container-m section{ float:left; }
+.container-m section.s1{ width:50%; background-color: #304ffe; }
+.container-m section.s2{ width:30%; background-color: #00bfa5; }
+.container-m section.s3{ width:20%; background-color: #795548; }
+
+/* footer menu */
+.footermenu{ background-color: #cfcfcf; }
+.container-fm{ background-color: #9e9e9e; }
+/* footer */
+footer{ background-color: #d05ce3; }
+.container-f{ background-color: #9c27b0; }
+
+/* 배경색제거 */
+header,nav,main { background-color: transparent; }
+
+/* clearfix */
+.clearfix { clear:both; /*float의 왼쪽,오른쪽흐름을 차단*/ }

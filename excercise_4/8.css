@@ -1,0 +1,12 @@
+
+body{
+  background-color:yellow;
+}
+
+p{
+  text-align:center;
+}
+
+body:nth-last-child(3){
+  background-color: blue;
+}

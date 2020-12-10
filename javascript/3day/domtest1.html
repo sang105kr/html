@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    b {
+      background-color: yellow;
+    }
+  </style>
+  <!-- <script>    
+    window.addEventListener("load",init);
+
+    function init(){
+      const $edu = document.getElementById('edu');
+      const $btn = document.getElementsByClassName("btn")[0];
+
+      $btn.addEventListener("click",function(){
+       console.log('버튼 클릭됨!!');
+       $edu.style.backgroundColor = "green";
+       $edu.style.color = "white";
+       $edu.style.fontSize = "2em";     
+      });      
+    }
+   </script>     -->
+
+   <script defer src="domtest1.js"></script>
+   
+   <!--
+    defer : dom트리 생성후 js코드 실행
+    async : dom트리와 병행해서 js코드 실행 
+   -->
+
+</head>
+<body>
+  <b id="edu">울산KH정보교육원</b>
+  <button class="btn">클릭</button><br>
+  <textarea id="contents" cols="30" rows="10"></textarea>
+  <button class="btn2">컨텐트 수정</button>
+</body>
+</html>

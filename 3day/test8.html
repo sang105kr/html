@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{text-align: center;background-color:#333;}
+    header,footer{height:10vh;background-color:blue;}
+    .content .left section:nth-child(2) footer{
+      position:absolute;
+      width:100%;
+      bottom:0;
+    }
+    nav{background-color:yellow;}
+    .content .left, .content .right {float:left;}
+    .content .left section{background-color:green;}
+    .content .left{width:70%}
+    .content .left section:nth-child(1){
+      height:30vh;line-height:30vh;
+    }
+    .content .left section:nth-child(2){
+      height:30vh;position:relative;
+    }
+    .content .right{width:30%;}
+    .content .right article {height:20vh;background-color: violet;}
+    .content .right aside {height:40vh;background-color: wheat;}
+    footer{clear:both;}
+  </style>
+</head>
+<body>
+  <header>header</header>
+  <nav>nav</nav>
+  <div class="content">
+    <div class="left">
+      <section>section</section>
+      <section>
+        <header>header</header>
+        section
+        <footer>footer</footer>
+      </section>
+    </div>
+    <div class="right">
+      <article>article</article>
+      <aside>aside</aside>
+    </div>
+  </div>    
+  <footer>footer</footer>
+</body>
+</html>

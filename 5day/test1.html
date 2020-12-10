@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {outline:1px solid red;}
+    body{margin:0;}
+    .item1{float:left;background-color:orange;width:50px;height:50px;}
+    .item2{background-color: blue;width:70px;height:70px;
+           display:inline-block;}
+    .item3{background-color: greenyellow;width:90px;height:90px;
+           display: inline-block; margin-left:-4px;
+           position: relative; }
+    .item4{padding:10px;
+            position: absolute;
+           top:25px; left:10px;}      
+    .wrapper{
+      width:212px;
+      margin: 50px auto;
+      text-align:center;
+    }           
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="wrapper">
+      <div class="item1">menu1</div>
+      <div class="item2">menu2</div>
+      <div class="item3"><sapn class="item4">menu3</sapn></div>
+    </div>
+  </div>
+</body>
+</html>
