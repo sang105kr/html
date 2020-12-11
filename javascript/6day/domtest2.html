@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.addEventListener("load",init);
+    function init(){
+      const $btn_writeBucket = document.getElementById('btn_writeBucket');      
+      $btn_writeBucket.addEventListener("click",btn_writeBucket);
+    }
+    
+    //등록
+    function btn_writeBucket(evt) {
+      const $in_t_bucket = document.getElementById('in_t_bucket');
+      const $ul = document.getElementById('bucketList');
+
+      const $li = document.createElement('li');
+
+      const $p = document.createElement('p');
+      $p.appendChild(document.createTextNode($in_t_bucket.value));
+
+      const $btn_modify = document.createElement('button');
+      $btn_modify.appendChild(document.createTextNode('수정'));
+      $btn_modify.addEventListener("click",btn_modify_f);
+
+      const $btn_delete = document.createElement('button');
+      $btn_delete.appendChild(document.createTextNode('삭제'));
+      $btn_delete.addEventListener('click',btn_delete_f);
+
+      $li.appendChild($p);
+      $p.appendChild($btn_modify);
+      $p.appendChild($btn_delete);
+
+      $ul.appendChild($li);
+    }
+
+    //삭제
+    function btn_delete_f(evt){
+      const $ul = evt.target.closest('ul');
+      const $li = evt.target.closest('li');
+
+      $ul.removeChild($li);
+    }
+
+    //수정
+    function btn_modify_f(evt){
+        const $in_t_bucket = document.getElementById('in_t_bucket');
+        const tmp = prompt('수정할내용을 작성하시오',$in_t_bucket.value);
+        evt.target.previousSibling.nodeValue = tmp;
+
+    //   const $input = document.createElement('input');
+    //   $input.setAttribute("type","text");
+    //   $input.setAttribute("id","newBucket");
+
+    //   evt.target.parentElement.replaceChild( $input, evt.target.previousSibling);
+    // }    
+  </script>
+</head>
+<body>
+  <input type="text" id="in_t_bucket"><button id="btn_writeBucket">등록</button>
+  <ul id="bucketList">
+    <!-- <li>
+      <p>목록1 <button>수정</button><button>삭제</button></p>
+    </li> -->
+  </ul>
+</body>
+</html>

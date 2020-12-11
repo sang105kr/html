@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버킷리스트</title>
+  <style>
+    button {
+      margin-left:5px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="input_bucket"><button id="btn_writeBucket">등록</button>
+  <ol id="bucketList"></ol>
+  <script>
+    const $in_t_bucket = document.getElementById('input_bucket')
+    const $btn_writeBucket = document.getElementById('btn_writeBucket');
+    const $bucketList = document.getElementById('bucketList');
+
+    $btn_writeBucket.addEventListener("click",btn_writeBucket);
+
+    //등록
+    function btn_writeBucket(evt){
+      if($in_t_bucket.value.trim().length == 0) return ;
+
+      //요소생성
+      const $p = document.createElement('p');
+      const $li = document.createElement('li');
+      const $btn_modifyBucket = document.createElement('button');
+      const $btn_deleteBucket = document.createElement('button');
+
+      //요소에 이벤트 등록
+      $btn_modifyBucket.addEventListener("click",btn_modifyBucket);
+      $btn_deleteBucket.addEventListener("click",btn_deleteBucket);
+
+      const $btn = document.createElement('button');
+      $li.append($p);
+      $p.append($in_t_bucket.value);
+      $p.append($btn_modifyBucket);$btn_modifyBucket.append('수정');
+      $p.append($btn_deleteBucket);$btn_deleteBucket.append('삭제');
+      $bucketList.append($li);
+    }
+    //삭제
+    function btn_deleteBucket(evt) {
+      console.log('삭제',evt.target.closest('ol'));
+      evt.target.closest('ol').removeChild(evt.target.closest('li'));
+    }
+    //수정
+    function btn_modifyBucket(evt) {
+      console.log(evt.target.parentElement.firstChild);
+      evt.target.parentNode.firstChild.nodeValue = prompt('수정하기',$in_t_bucket.value);
+    }    
+  </script>
+</body>
+</html>
