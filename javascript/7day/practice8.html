@@ -25,16 +25,19 @@
 
     }
     //타이머
+    let timeId = null;
     function startTime(){
+      let countDown = 11;
+      if(timeId != null){
+          clearTimeout(timeId);
+      }      
+
       const $remainingTime = document.getElementById('remainingTime');
       $remainingTime.textContent = 0;     
       
       const $sum = document.getElementById('countSum');
       $sum.firstChild.nodeValue = 0;
       
-      let countDown = 11;
-      let timeId = null;
-
       count();
       function count(){
         --countDown;
@@ -55,6 +58,7 @@
       init();
       startTime();
     }
+
     //점수계산
     function score(evt){
 
