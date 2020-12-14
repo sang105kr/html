@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.addEventListener("load",init);
+    function init(){
+      const $button = document.querySelector("button");
+      $button.addEventListener("click",score);
+    }
+
+    function score(evt){
+
+      const $questions = document.querySelectorAll(".question");
+      const $answers = document.querySelectorAll(".answer");
+
+      const $answersArr = Array.from($answers);
+      
+      let rightCount = 0;
+      Array.from($questions).forEach(function(ele,idx){
+        if(eval(ele.textContent) == $answersArr[idx].value){
+          ++rightCount;
+          ele.style.textDecoration = "none";
+        }else{
+          ele.style.textDecoration = "line-through";
+        }
+      });
+
+      const $sum = document.getElementById('countSum');
+      $sum.textContent = rightCount;
+    }
+  </script>
+</head>
+<body>
+  <h3>산수 문제를 풀어봅시다</h3>
+  <p>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요</p>
+  <hr>
+  <table>
+    <tr>
+      <td class="question">5*6</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td class="question">7+5*3</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td class="question">23*2</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td class="question">35-7</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td><button>채점</button></td>
+      <td id="countSum">0</td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.addEventListener("load",init);
+    function init(){
+      const $questions = document.querySelectorAll(".question");
+      const $answers = document.querySelectorAll(".answer");     
+      Array.from($questions).forEach(function(ele){
+        ele.textContent = makeQuestion();
+        ele.style.textDecoration = "none";
+      });
+      Array.from($answers).forEach(function(ele){
+        ele.value = "";
+      });
+
+      const $btn_score = document.getElementById("btn_score");
+      const $btn_reload = document.getElementById("btn_reload");
+
+      $btn_score.addEventListener("click",score);
+      $btn_reload.addEventListener("click",reload);
+
+    }
+    //타이머
+    function startTime(){
+      const $remainingTime = document.getElementById('remainingTime');
+      $remainingTime.textContent = 0;     
+      
+      const $sum = document.getElementById('countSum');
+      $sum.firstChild.nodeValue = 0;
+      
+      let countDown = 11;
+      let timeId = null;
+
+      count();
+      function count(){
+        --countDown;
+        $remainingTime.textContent = countDown;
+        if(timeId != null){
+          clearTimeout(timeId);
+        }
+        if(countDown == 0){
+          score();
+        }else{
+          timeId = setTimeout(count,1000);
+        }
+      }
+    }
+
+    //새로고침
+    function reload(){
+      init();
+      startTime();
+    }
+    //점수계산
+    function score(evt){
+
+      const $questions = document.querySelectorAll(".question");
+      const $answers = document.querySelectorAll(".answer");
+
+      const $answersArr = Array.from($answers);
+      
+      let rightCount = 0;
+      Array.from($questions).forEach(function(ele,idx){
+        if(eval(ele.textContent) == $answersArr[idx].value){
+          ++rightCount;
+          ele.style.textDecoration = "none";
+        }else{
+          ele.style.textDecoration = "line-through";
+        }
+      });
+
+      const $sum = document.getElementById('countSum');
+      $sum.firstChild.nodeValue = rightCount;
+    }
+    //랜덤한 문제 생성
+    function makeQuestion(){
+      const op1 = Math.floor((Math.random())*100)+1;
+      const op2 = Math.floor((Math.random())*100)+1;
+      const operator = ['+','-','*','/'];
+      const randomOperator = Math.floor(Math.random()*operator.length);
+
+      return `${op1} ${operator[randomOperator]} ${op2}`;
+    }
+  </script>
+</head>
+<body>
+  <h3>산수 문제를 풀어봅시다</h3>
+  <p>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요</p>
+  <div>남은시간 <span id="remainingTime">0</span></div>
+  <hr>
+  <table>
+    <tr>
+      <td class="question">5*6</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td class="question">7+5*3</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td class="question">23*2</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td class="question">35-7</td>
+      <td><input class="answer" type="text"></td>
+    </tr>
+    <tr>
+      <td><button id="btn_score">채점</button></td>
+      <td id="countSum">0<button id="btn_reload">다시</button></td>
+    </tr>
+  </table>
+</body>
+</html>

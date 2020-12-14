@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const init = (evt) => {
+      console.log(navigator);
+      if(navigator.userAgent.indexOf("Chrome") != -1 && 
+         navigator.vendor == "Google Inc."){
+          alert('구글 chrome브라우저');
+      }else{
+          alert('구글 chrome브라우저 아님');
+      }
+    }
+    window.addEventListener("load",init);
+
+  </script>
+</head>
+<body>
+  <h3>구글 Chrome브라우저 감별</h3>
+  <hr>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nemo. Reprehenderit hic corrupti iure! Voluptatibus quod dolore voluptate officiis! Autem facilis iusto omnis provident mollitia odit ipsa dignissimos dolores neque.
+  Aspernatur quia sapiente obcaecati facere id atque similique perspiciatis aut mollitia neque numquam consectetur officiis voluptatibus, accusamus explicabo minima inventore quaerat corporis eum tenetur. Laborum eaque quas consequuntur perspiciatis vitae?
+  Nisi, rem impedit eaque cupiditate, praesentium inventore fugiat sit ea quaerat placeat aspernatur excepturi ex id libero culpa quis harum officiis maiores quia iste commodi! Fugit deleniti voluptate amet quisquam.
+</body>
+</html>
