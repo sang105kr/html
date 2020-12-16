@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="fruits">
+    <li id="apple">Apple</li>
+    <li id="banana">Banana</li>
+    <li id="orange">Orange</li>
+    <!--<li id="grape" class="item4">Grape<button>수정</button></li> -->
+  </ul>
+  <script>
+    //li태그 생성
+    const $liElement = document.createElement('li');
+    const $liTextNode = document.createTextNode('Grape');
+    const $attrOfLi = document.createAttribute('id').value='grape';
+    //button태그 생성
+    const $buttonElement = document.createElement('button');
+    const $buttonTextNode = document.createTextNode('수정');
+    $buttonElement.appendChild($buttonTextNode);
+    $buttonElement.style.backgroundColor = 'yellow';
+    $buttonElement.addEventListener("click",function(){
+      alert('클릭됨!');
+    });
+    //복사 cloneNode(); 매개값에 true:깊은복사, false:얕은복사
+    $buttonElement2 = $buttonElement.cloneNode(true);
+    // $buttonElement2.textContent = '삭제';
+    //li태그 컨텐츠
+    $liElement.append($liTextNode);
+    $liElement.append($buttonElement);
+    $liElement.append($buttonElement2);
+    //fruits의 자식요소로 li요소 추가
+    document.getElementById('fruits').appendChild($liElement);
+
+  </script>
+</body>
+</html>

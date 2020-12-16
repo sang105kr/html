@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div#sudo::before{
+      content:'{'
+    }
+    div#sudo::after{
+      content:'}'
+    }
+    div#sudo{
+      font-size : 20px;
+    }
+  </style>
+  <!--defer: 현재웹문서에 DOM Tree가 구축된후 js코드가 실행되도록 설정하는 속성-->
+  <script defer src="selector.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="sudo">컨텐츠</div>
+    <div id="first" class="item">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item">item3</div>
+    <ul class="list">
+      <li class="li1"></li>
+      <li class="sub1"></li>
+      <li class="li2"></li>
+      <li class="li3"></li>
+    </ul>
+    <form action="">
+      <input type="text" name="" id="" required placeholder="이름을 입력하세요" readonly>
+      <input type="checkbox" name="" id="">
+      <input type="button" value="">
+      <input type="email" name="" id="">
+    </form>
+  </div>
+</body>
+</html>
