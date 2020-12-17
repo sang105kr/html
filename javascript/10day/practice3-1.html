@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style-type: none;
+      padding-left: 0px;
+    }
+    #btn-view{
+      margin-left:5px;
+    }
+    #title{
+      margin-left:5px;
+    }
+  </style>
+</head>
+<body>
+  <h3>포스트잇</h3>
+  <hr>
+  <form action="#">
+    <ul>
+      <li><label for="title">제 목</label><input type="text" id="title"></li>
+      <li><label for="memo">메모입력</label></li>
+      <li><textarea id="memo" cols="30" rows="10"></textarea></li>
+      <li><button id="btn-save">저장</button><button id="btn-view">보기</button></li>
+    </ul>
+  </form>
+  <script>
+    //저장버튼
+    document.getElementById('btn-save').addEventListener("click",(evt)=>{
+      localStorage.setItem(
+        document.getElementById('title').value,
+        document.getElementById('memo').value,
+      );
+    },false);
+    //보기버튼
+    document.getElementById('btn-view').addEventListener("click",(evt)=>{
+      window.open("practice3-2.html","_blank","top=100,left=100,width=500,height=400");
+    },false);    
+  </script>
+</body>
+</html>

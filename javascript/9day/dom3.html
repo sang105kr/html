@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="fruits">
+    <li id="apple">Apple</li>
+    <li id="banana">Banana</li>
+    <li id="orange">Orange</li>
+    <li id="grape" class="item4">Grape<button>수정</button><button>삭제</button></li>
+  </ul>
+  <script>
+    //textContent : 컨텐츠내의 하위요소포함해서 모든 텍스트를 읽어오거나 변경할때 
+    //innerHtml :컨텐츠내의 하위요소포함해서 모든내용(텍스트+요소)를 읽어오거나 변경할때 
+
+    console.log(document.getElementById('grape').textContent);
+    console.log(document.getElementById('grape').innerHTML);
+    console.log(document.getElementById('grape').firstChild.nodeValue);
+    // document.getElementById('grape').firstChild.nodeValue = 'mellon';
+    // document.getElementById('grape').style.color = 'red';
+    document.getElementById('grape').innerHTML = 'test<button>수정</button><button>삭제</button>';
+  </script>
+</body>
+</html>
