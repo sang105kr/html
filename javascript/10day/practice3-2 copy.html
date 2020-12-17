@@ -30,22 +30,15 @@
   </style>
 </head>
 <body>
-  <h3>일기 보기</h3>
+  <h3>포스트잇 출력</h3>
   <hr>
   <ul>
     <script>
-      let cnt = 0;
       for(let i=0; i<localStorage.length; i++){
-        //키값 얻어오기
         let key = localStorage.key(i);
-
-        //키값이 정규표현식과 체크해서 날짜패턴이면
-        const regExp = /\d{4}.\d{2}.\d{2}./;
-        if(!regExp.test(key)) continue;
-
         let value = localStorage.getItem(key);
         document.write("<li>");
-        document.write("<span class='num'>" + (++cnt) + ".</span>");          
+        document.write("<span class='num'>"+(i+1)+".</span>");          
         document.write("<span class='key'>"+key+"</span>");
         document.write("<span class='value'>"+value+"</span>");
         document.write("</li>");
