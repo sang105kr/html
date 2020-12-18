@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul{list-style-type:none; padding-left:0px;}
+  </style>
+</head>
+<body>
+  <h3>나의 단어장 모두 출력</h3>
+  <hr>
+  <ul id='wordList'></ul>
+  <button id='btn-del'>삭제</button>
+  <script>
+    //선택된 단어 삭제
+    const delItem = evt=>{
+      const $parent = document.getElementById('wordList');
+      const $inputs = document.querySelectorAll('input:checked');
+
+      for(let i=0; i<$inputs.length; i++){
+        let $li = $inputs[i].parentElement;
+        $parent.removeChild($li);
+
+        let key = $li.textContent.split(' ')[1];
+        localStorage.removeItem(key);
+      }
+    }
+
+    const listAll = evt => {
+      const $listAll = document.getElementById('wordList');
+      const $delBtn = document.getElementById('btn-del');
+      $delBtn.addEventListener("click",delItem,false);
+
+      //기존목록 삭제
+      $listAll.textContent = '';
+      //localStorage 목록 가져오기
+      for(let i=0;i<localStorage.length;i++){
+        let key = localStorage.key(i);
+        let value = localStorage.getItem(key);
+  
+        const $li = document.createElement('li');
+  
+        const record = `<input type=checkbox>${i+1} ${key} ${value}`;
+        $li.innerHTML = record;
+        $listAll.appendChild($li);
+      }
+    }
+
+    //localStorage 변경시
+    window.addEventListener("storage",listAll,false);
+
+
+
+    //목록보여주기
+    listAll();
+  </script>
+</body>
+</html>

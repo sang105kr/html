@@ -52,7 +52,7 @@ const deleteHandler = evt => {
 //전체보기
 const viewHandler   = evt => {
   console.log('전체보기');
-  window.open("challenge12-2.html","_blak","top=100,left=100,width=600,height=500");
+  window.open("challenge12-3.html","_blak","top=100,left=100,width=600,height=500");
 };
 
 //이벤트 리스너
