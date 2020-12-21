@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>곱셈하기</h3>
+  <hr>
+  <form action="#">
+    <input type="text" name="" id="op1"> x
+    <input type="text" name="" id="op2">
+    <button id="btn-multi">곱하기</button>
+    <input type="text" name="" id="result">
+  </form>
+  <script>
+    //1)워커객체생성
+    const worker = new Worker('practice6.js');
+
+    const $btnMulti = document.getElementById('btn-multi');
+    $btnMulti.addEventListener("click",function(evt){
+      //피연산자 2개 읽어오기
+      const sendData = {val1:document.getElementById('op1').value,
+                        val2:document.getElementById('op2').value}
+
+      //2)워커객체에 피연산자2개 전달
+      worker.postMessage(sendData);
+
+    },false);
+
+    //3)워커객체로부터 메시지 수신
+    worker.addEventListener("message",function(evt){
+      document.getElementById('result').value = evt.data;
+    },false);
+
+  </script>
+</body>
+</html>
