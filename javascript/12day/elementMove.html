@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="fruits">
+    <li id="item1">banana</li>
+    <li id="item2">apple</li>
+    <li id="item3">grape</li>
+  </ul>
+  <script>
+    const $parent = document.getElementById('fruits');
+    $parent.insertBefore(document.getElementById('item1'),
+                         document.getElementById('item3'))
+  </script>
+</body>
+</html>

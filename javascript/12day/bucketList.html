@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../11day/common.js"></script>
+</head>
+<body>
+  <h3>나만의 버킷리스트</h3>
+  <hr>
+  <input type="text" id='bucket'><button id="btn-add">추가</button>
+  <ul id='list'></ul>
+  <script>
+    const $btnAdd = document.getElementById('btn-add');
+    const $list = document.getElementById('list');
+
+    $btnAdd.addEventListener('click',add,false);
+    $list.addEventListener('click',listClickHandler,false);
+
+    //버킷영역 클릭시
+    function listClickHandler(evt){
+      //삭제버튼 클릭시
+      if(evt.target.classList.contains('btn-del')){
+        $list.removeChild(evt.target.parentElement);
+
+      //수정버튼 클릭시  
+      }else if(evt.target.classList.contains('btn-modi')){
+        console.log('수정');
+        const $li = evt.target.parentElement;
+
+        //편집모드
+        if(evt.target.classList.contains('editing')){
+          //input요소의 value값 가져오기
+          const $input = $li.querySelector('input[type=text].modiBucket');
+          //textNode생성
+          const $textNode = makeEle(null,null,$input.value);
+          //편집중인 input요소 textNode로 교체
+          $li.replaceChild($textNode,$input);
+          //편집모드로
+          evt.target.classList.toggle('editing');
+        //읽기모드  
+        }else{
+          //버킷내용 가져오기
+          const text = $li.firstChild.nodeValue;
+          //input요소생성
+          const $input = makeEle('input',{type:'text',value:text,class:'modiBucket'});
+
+          //input요소에 이동 이벤트등록
+          $input.addEventListener('keyup',function(evt){
+            console.log('위아래이동'+evt.key);
+            if(evt.key == 'ArrowUp'){
+
+            }else if(evt.key = 'ArrowDown'){
+              
+            }
+          },false);
+
+          //textNode => input Element로 변경
+          $li.replaceChild($input,$li.firstChild);
+          //편집모드로
+          evt.target.classList.toggle('editing');
+        }
+      }  
+    }
+
+    //추가
+    function add(evt){
+      const $bucket = document.getElementById('bucket');
+      const $li = makeEle('li',null,$bucket.value,
+                    makeEle('button',{class:'btn-modi'},'수정'),
+                    makeEle('button',{class:'btn-del'},'삭제')
+                  )
+      $list.appendChild($li); 
+    }
+
+  </script>
+</body>
+</html>
