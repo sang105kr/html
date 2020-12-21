@@ -28,7 +28,6 @@
       }else if(evt.target.classList.contains('btn-modi')){
         console.log('수정');
         const $li = evt.target.parentElement;
-
         //편집모드
         if(evt.target.classList.contains('editing')){
           //input요소의 value값 가져오기
@@ -49,15 +48,23 @@
           //input요소에 이동 이벤트등록
           $input.addEventListener('keyup',function(evt){
             console.log('위아래이동'+evt.key);
+            
             if(evt.key == 'ArrowUp'){
-
+              $list.insertBefore($li,$li.previousElementSibling);  
+              $input.focus();$input.select();
             }else if(evt.key = 'ArrowDown'){
-              
+              if($li.nextElementSibling){
+                $list.insertBefore($li,$li.nextElementSibling.nextElementSibling);
+              }else{
+                $list.insertBefore($li,$list.firstElementChild);
+              }
+              $input.focus();$input.select();
             }
           },false);
 
           //textNode => input Element로 변경
           $li.replaceChild($input,$li.firstChild);
+          $input.focus();$input.select();
           //편집모드로
           evt.target.classList.toggle('editing');
         }
