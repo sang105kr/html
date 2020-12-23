@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {outline: 1px solid red;}
+    .wrapper{
+      display:grid;
+      grid-template-columns: repeat(3,1fr); /* 1fr 1fr 1fr */
+      /* grid-template-rows: 100px 200px; */
+      grid-template-rows: minmax(100px auto);
+    }
+    .items{
+      padding:10px;
+      background-color: #eee;
+    }
+    .items:nth-child(2n+1){
+      background-color: #bbb;
+    }
+    .items:hover{
+      background-color: lightpink;
+      font-size:1.5em;
+      transition: all 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="items">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius dolorum provident, quibusdam tenetur autem ipsum numquam! Fugiat accusantium, quos corrupti, sequi atque eaque eveniet maiores quo dicta libero expedita nisi?</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tempore, accusamus ea nihil consequatur asperiores error magnam dolores amet, necessitatibus saepe porro ab corrupti itaque, qui natus laborum quidem quaerat!</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste error voluptas accusamus quisquam sit. A placeat quis molestias. Eius ad ullam nobis optio blanditiis suscipit placeat consequuntur quas odit laboriosam?</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, non, provident itaque quasi eos ea porro laudantium sit quo, fugiat in a error necessitatibus odio inventore eligendi. At, culpa facilis?</div>
+    <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorem. Dolore consequuntur laborum omnis nam iusto sequi delectus! Accusamus corporis cum voluptatibus possimus modi vel voluptate sint molestias molestiae necessitatibus!</div>
+  </div>
+</body>
+</html>

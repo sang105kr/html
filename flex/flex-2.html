@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {outline:1px solid red}
+    .container{
+      display:flex;
+      flex-direction: row;
+    }
+    .opt1{
+      flex-wrap:nowrap; /*공간이 부족하면 짤림*/
+    }
+    .opt2{
+      flex-wrap:wrap; /*공간이 부족하면 교차축으로 이동해서 보임*/
+    }
+    .opt3{
+      flex-wrap:wrap-reverse;
+    }
+    .box{
+      background-color: #222;
+      padding:5px 45px; /* y축 x축 */
+      margin:5px;
+      /* width:80px;       */
+    }
+    p{
+      color:#fff;
+      text-align: center;
+    }    
+  </style>
+</head>
+<body>
+  <div class="container opt1">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+    <div class="box"> <p>5</p> </div>
+    <div class="box"> <p>6</p> </div>
+  </div>
+  <div class="container opt2">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+    <div class="box"> <p>5</p> </div>
+    <div class="box"> <p>6</p> </div>
+  </div>
+  <div class="container opt3">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+    <div class="box"> <p>5</p> </div>
+    <div class="box"> <p>6</p> </div>
+  </div>
+</body>
+</html>

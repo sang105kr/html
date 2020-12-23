@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {outline: 1px solid red;}
+    .wrapper{
+      display: grid;
+      grid-template-columns: repeat(3,100px);
+      grid-auto-rows:100px;
+      width:500px;
+      height:500px;
+      /* 컨테이너 내에서 의 배치 */
+      /* justify-content(가로),align-content(세로) */
+      /* start,end,center,space-around,space-between,space-evenly*/
+      /* justify-content: space-evenly; */
+      /*align-content: space-around;*/
+
+      /* 셀안에서의 배치 */
+      /* justify-items(가로),align-items(세로) */
+      /*justify-items: stretch; start,end,center,stretch*/
+      align-items: stretch; /*start,end,center,stretch*/
+    }
+    .item{
+      padding:15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="item item1"><p>item1</p></div>
+    <div class="item item2"><p>item2</p></div>
+    <div class="item item3"><p>item3</p></div>
+    <div class="item item4"><p>item4</p></div>
+    <div class="item item5"><p>item5</p></div>
+    <div class="item item6"><p>item6</p></div>
+    <div class="item item7"><p>item7</p></div>
+    <div class="item item8"><p>item8</p></div>
+    <div class="item item9"><p>item9</p></div>
+  </div>
+</body>
+</html>

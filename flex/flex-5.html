@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * { outline:1px solid red}
+    .container{
+      display: flex;
+      flex-flow: row wrap;
+      width:220px;
+      height:250px;
+    }
+    .opt1{
+      align-content: stretch; /*기본값*/
+    }
+    .opt2{
+      align-content: flex-start;
+    }
+    .opt3{
+      align-content: flex-end;
+    }
+    .opt4{
+      align-content: center;
+    }
+    .opt5{
+      align-content: space-around;
+    }
+    .opt6{
+      align-content: space-between;
+    }
+    .opt7{
+      align-content: space-evenly;
+    }
+    .box{
+      background-color: #222;
+      padding:5px 45px; /* y축 x축 */
+      margin:5px;
+      /* width:80px;       */
+    }
+    p{
+      color:#fff;
+      text-align: center;
+    }     
+  </style>
+</head>
+<body>
+  <div class="container opt1">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+  </div>
+  <div class="container opt2">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+  </div>
+  <div class="container opt3">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+  </div>
+  <div class="container opt4">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+  </div>
+  <div class="container opt5">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+  </div>
+  <div class="container opt6">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+  </div>
+  <div class="container opt7">
+    <div class="box"> <p>1</p> </div>
+    <div class="box"> <p>2</p> </div>
+    <div class="box"> <p>3</p> </div>
+    <div class="box"> <p>4</p> </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{outline:1px solid red}
+    .container{
+      display: flex;
+      height:150px;
+    }
+    .opt1{
+      align-items:stretch; /*기본값*/
+    }
+    .opt2{
+      align-items:flex-start;
+    }
+    .opt3{
+      align-items:flex-end;
+    }
+    .opt4{
+      align-items:center;
+    }
+    .opt5{
+      align-items:baseline;
+    }
+    .box{
+      background-color: #222;
+      padding:5px 45px; /* y축 x축 */
+      margin:5px;
+      /* width:80px;       */
+    }
+    p{
+      color:#fff;
+      text-align: center;
+    }  
+    p.p2{
+      font-size: 2em;
+    }   
+  </style>
+</head>
+<body>
+  <div class="container opt1">
+    <div class="box"> <p class="p1">s</p> </div>
+    <div class="box"> <p class="p2">p</p> </div>
+    <div class="box"> <p class="p3">z</p> </div>
+    <div class="box"> <p class="p4">x</p> </div>
+  </div>
+  <div class="container opt2">
+    <div class="box"> <p class="p1">s</p> </div>
+    <div class="box"> <p class="p2">p</p> </div>
+    <div class="box"> <p class="p3">z</p> </div>
+    <div class="box"> <p class="p4">x</p> </div>
+  </div>
+  <div class="container opt3">
+    <div class="box"> <p class="p1">s</p> </div>
+    <div class="box"> <p class="p2">p</p> </div>
+    <div class="box"> <p class="p3">z</p> </div>
+    <div class="box"> <p class="p4">x</p> </div>
+  </div>
+  <div class="container opt4">
+    <div class="box"> <p class="p1">s</p> </div>
+    <div class="box"> <p class="p2">p</p> </div>
+    <div class="box"> <p class="p3">z</p> </div>
+    <div class="box"> <p class="p4">x</p> </div>
+  </div>
+  <div class="container opt5">
+    <div class="box"> <p class="p1">s</p> </div>
+    <div class="box"> <p class="p2">p</p> </div>
+    <div class="box"> <p class="p3">z</p> </div>
+    <div class="box"> <p class="p4">x</p> </div>
+  </div>
+</body>
+</html>
