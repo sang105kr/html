@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes imgrotate {
+      0% {left:0px; transform: rotate(0deg);}
+      50% {left:500px; }
+      100% {
+        left:500px; transform: rotate(360deg);
+        font-size:2em}
+    }
+    body{
+      position:relative;
+    }
+    #box{
+      position:absolute;
+      width:200px;height:200px;
+      border-radius: 100px;
+      background: linear-gradient(0deg,#cb60b3 0%, #ff0000 100%);
+      text-align: center;
+
+      animation-name: imgrotate;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease;
+
+    }
+    #box>h2{
+      line-height: 200px;
+      color:white
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <h2>연말연시</h2>
+  </div>
+</body>
+</html>

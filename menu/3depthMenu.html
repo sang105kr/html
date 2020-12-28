@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --li-width:80px;
+    }
+    * {outline:1px solid red;}
+    ul{
+      list-style-type: none;
+      padding-left: 0px;
+    }
+    a{text-decoration: none;}
+    /* 1depth */
+    .topmenu .depth1 {
+      display:flex;
+      justify-content: center;
+    }
+    ul > li {
+      width:var(--li-width);
+      text-align: center;
+    }
+    .topmenu .depth2,
+    .topmenu .depth3 {
+      display: none;
+    }
+    .topmenu .depth1 li:hover .depth2{
+      display:block;
+    }
+
+    /* 2depth */
+    .topmenu .depth1 .depth2 {
+      position: absolute;
+    }
+    .topmenu .depth1 .depth2 li{
+      position: relative;
+    }
+
+    .topmenu .depth1 .depth2 li:hover .depth3{
+      display:block;
+      top:0px;
+      left:var(--li-width);
+    }  
+
+    /* 3depth */
+    .topmenu .depth1 .depth2 .depth3 {
+      position: absolute;
+    }  
+  </style>
+</head>
+<body>
+  <nav class="topmenu">
+    <ul class="depth1">
+      <li>
+        <a href="#">menu11</a>
+        <ul class="depth2">
+          <li>
+            <a href="#">menu21</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu22</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu23</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu24</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu12</a>
+        <ul class="depth2">
+          <li>
+            <a href="#">menu21</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu22</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu23</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu24</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu13</a>
+        <ul class="depth2">
+          <li>
+            <a href="#">menu21</a>
+            <ul class="depth3">
+              <li><a href="#">menu321</a></li>
+              <li><a href="#">menu322</a></li>
+              <li><a href="#">menu323</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu22</a>
+            <ul class="depth3">
+              <li><a href="#">menu321</a></li>
+              <li><a href="#">menu322</a></li>
+              <li><a href="#">menu323</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu23</a>
+            <ul class="depth3">
+              <li><a href="#">menu331</a></li>
+              <li><a href="#">menu332</a></li>
+              <li><a href="#">menu333</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu24</a>
+            <ul class="depth3">
+              <li><a href="#">menu341</a></li>
+              <li><a href="#">menu342</a></li>
+              <li><a href="#">menu343</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu14</a>
+        <ul class="depth2">
+          <li>
+            <a href="#">menu21</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu22</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu23</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu24</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu15</a>
+        <ul class="depth2">
+          <li>
+            <a href="#">menu21</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu22</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu23</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu24</a>
+            <ul class="depth3">
+              <li><a href="#">menu31</a></li>
+              <li><a href="#">menu32</a></li>
+              <li><a href="#">menu33</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ab molestiae, cupiditate aspernatur laborum, nobis odit quibusdam fugiat nostrum nihil architecto labore aperiam, obcaecati praesentium reprehenderit qui sequi. Dolorem, optio.
+  Debitis iste, accusantium ea obcaecati labore, aspernatur delectus eos quae, consequuntur ipsa doloribus reiciendis? Animi debitis sit quam necessitatibus natus quisquam quis reprehenderit voluptas deserunt nihil! Iusto laboriosam eligendi minima!
+  Odio in sapiente sunt tenetur at porro sed accusantium? Nam numquam rerum non commodi hic explicabo eligendi rem atque enim molestiae, asperiores cupiditate sint inventore voluptate. Sequi ipsam aliquam sit!
+  Voluptatum voluptatem facere vitae omnis deleniti sed sit eligendi laborum saepe distinctio vero neque debitis est accusamus ad fugit at delectus, aliquid voluptas. Exercitationem placeat saepe quaerat delectus autem rem.
+  Ratione beatae quisquam, facilis ducimus a laborum temporibus illum sed impedit iure ea dolorum perspiciatis exercitationem suscipit similique eligendi maxime et fugiat maiores id praesentium harum consequatur quae. Dolores, suscipit.
+  Accusantium consequuntur, eos est, aut ratione maxime animi ex labore accusamus ipsa ad cumque non libero? Asperiores atque, ex saepe dolorem, inventore fugit consectetur quam enim sed, corrupti dicta commodi!
+  Dolorem, sequi ullam? Ipsam dolore, quasi recusandae temporibus, error incidunt necessitatibus quibusdam sint repellendus perspiciatis tenetur est saepe, iste amet. Sit, beatae est? Reprehenderit laboriosam voluptates commodi sapiente nostrum inventore.
+  Possimus dicta voluptates quibusdam minus quia veniam error distinctio necessitatibus consequuntur non, ullam inventore excepturi assumenda facere vitae similique, tempore laborum eaque quas iusto ut? Voluptatibus aliquam ullam perferendis soluta.
+  Debitis non et laborum nesciunt delectus? Tempora iste, tenetur quae, repellat unde id possimus commodi est distinctio accusamus nobis quia libero! Corporis praesentium modi mollitia eos iusto autem accusantium in?
+  Repellat ab explicabo veritatis est, perferendis nobis fugiat hic mollitia? Repellat nulla blanditiis ipsam perspiciatis nobis ratione, quis quae id ullam tempora, voluptates fuga sapiente, architecto ut? Doloremque, esse facilis!</main>
+  <footer>울산KH정보교육원</footer>
+</body>
+</html>

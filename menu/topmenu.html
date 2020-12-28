@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  />    
+  <style>
+    /* * { outline: 1px solid red;} */
+    body{
+      margin: 0px;
+    }
+    a {
+      text-decoration: none;
+      color:#fff;
+    }
+    ul{
+      list-style-type: none;
+      padding-left: 0px;
+    }
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 10px;
+      background-color: #4527a0;
+    }
+    .navbar .navbar-logo,
+    .navbar .navbar-menu,
+    .navbar .navbar-sns{
+      display: flex;
+    }
+    /* logo */
+    .navbar .navbar-logo li:nth-child(1){
+      margin-right:5px;
+      color:salmon;
+      font-size: 1.5rem;
+    }
+    .navbar .navbar-logo li:nth-child(1) i{
+      vertical-align: top;
+    }
+
+    /* GNB 메뉴 */
+    .navbar .navbar-menu li {
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    .navbar .navbar-menu li:hover {
+      background-color: #7953d2;
+      transition: background-color 1s ease;
+      font-weight: bold;
+    }
+    .navbar .navbar-menu li a:hover{
+      text-decoration: underline;
+    }  
+
+    /* sns */
+    .navbar .navbar-sns li {
+      margin-left:5px;
+    }
+
+    .navbar #hamburger{
+      display: none;
+      position:absolute;
+      top:20px; right:20px;
+    }
+    @media screen and (max-width:767px){
+      .navbar,
+      .navbar .navbar-menu {
+        flex-direction: column;
+      }
+      .navbar #hamburger{
+        display: block;
+      }
+      .navbar .navbar-menu,
+      .navbar .navbar-sns{
+        display: none;
+      }
+      .navbar .navbar-logo{
+        align-self: flex-start;
+      }
+      .navbar .navbar-logo.active{
+        align-self: center;
+      }
+      .navbar .navbar-menu.active,
+      .navbar .navbar-sns.active{
+        display: flex;
+      }   
+
+      .navbar .navbar-menu {
+        width:100%;
+        text-align: center;
+        border-top: 0.5px solid  #ccc;
+        border-bottom: 0.5px solid #ccc;
+      }         
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <ul class="navbar-logo">
+      <li><i class="fab fa-pied-piper-alt"></i></li>
+      <li><a href="http://ulsankh.com">울산KH정보교육원</a></li>
+    </ul>
+    <ul class="navbar-menu">
+      <li><a href="#">java</a></li>
+      <li><a href="#">html</a></li>
+      <li><a href="#">css</a></li>
+      <li><a href="#">javascript</a></li>
+      <li><a href="#">spring</a></li>
+    </ul>
+    <ul class="navbar-sns">
+      <li>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fab fa-instagram-square"></i></a>
+      </li>
+    </ul>
+    <a href="#" id="hamburger"><i class="fas fa-bars"></i></a>
+  </div>
+
+  <script>
+    const $hamburger = document.getElementById('hamburger');
+    $hamburger.addEventListener('click',(evt)=>{
+
+      const $logo = document.querySelector('.navbar .navbar-logo');
+      const $menu = document.querySelector('.navbar .navbar-menu');
+      const $sns  = document.querySelector('.navbar .navbar-sns');
+
+      $logo.classList.toggle('active');
+      $menu.classList.toggle('active');
+      $sns.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

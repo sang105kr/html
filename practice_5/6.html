@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*애니메이션 정의*/
+    @keyframes imageRotation {
+      from    {top:0px;transform: rotate(0deg) ;}
+      50% {top:300px;}
+      to      {top:300px;transform: rotate(360deg);}
+    }
+
+    img{
+      position:absolute;
+      width:100px;height:100px;
+      animation-name: imageRotation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease;
+    }
+  </style>
+</head>
+<body>
+  <h3>어지러워요</h3>
+  <hr>
+  <img src="http://img.hani.co.kr/imgdb/resize/2018/1128/00502341_20181128.JPG" alt="">
+  <script>
+    const $img = document.querySelector('img');
+    $img.addEventListener('mouseover',(evt)=>{
+      console.log('aa');
+      alert('야호!');
+    })
+  </script>
+</body>
+</html>

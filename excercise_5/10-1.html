@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width:200px;
+      height:200px;
+    }
+    /* img:hover{
+      transform:rotate(180deg);
+    } */
+  </style>
+</head>
+<body>
+  <h3>마우스를 올려봐요</h3>
+  <hr>
+  <img src="http://img.hani.co.kr/imgdb/resize/2018/1128/00502341_20181128.JPG" alt="">
+  <script>
+    const $img = document.querySelector('img');
+    $img.addEventListener('mouseover',(evt)=>{
+      evt.target.style.transform = 'rotate(180deg)';
+    });
+    $img.addEventListener('mouseout',(evt)=>{
+      evt.target.style.transform = 'rotate(0deg)';
+    });
+  </script>
+</body>
+</html>

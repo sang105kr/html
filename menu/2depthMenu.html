@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * { outline: 1px solid red;}
+    ul {
+      list-style-type: none;
+      padding-left: 0px;
+    }
+    a {
+      text-decoration: none;
+    }
+    .wrapper .topmenu .depth1 {
+      display:flex;
+      justify-content: center;
+    }
+    .wrapper .topmenu .depth2 {
+      display: none;
+      position:absolute;
+    }
+
+    .wrapper .topmenu .depth1 li:hover .depth2 {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="topmenu">
+      <ul class="depth1">
+        <li>
+          <a href="#">menu1</a>
+          <ul class="depth2">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu2</a>
+          <ul class="depth2">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu3</a>
+          <ul class="depth2">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu4</a>
+          <ul class="depth2">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu5</a>
+          <ul class="depth2">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <main>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi non sed vel laborum eius ad, voluptatem minima reprehenderit explicabo provident quisquam quia! Expedita omnis eaque quibusdam ex fugiat ratione.
+    Dicta exercitationem accusamus aliquam quaerat voluptatem dolor voluptas sapiente delectus voluptate fugit impedit, omnis iure velit nostrum saepe dolorum, fugiat quas distinctio, ut iste reprehenderit. Eum eveniet labore saepe qui!
+    Esse aut totam rem! Consequatur iure ad distinctio et porro, consequuntur minus voluptate voluptas architecto similique in odio magni molestiae totam, quibusdam odit facilis aperiam reiciendis officiis sapiente culpa. Aperiam?
+    Mollitia vel architecto doloremque vero voluptates culpa dolore autem similique officiis suscipit alias ullam, dignissimos soluta expedita iste molestias esse, distinctio delectus aliquid excepturi aspernatur consequatur illum! Labore, harum sunt.
+    Alias dolor inventore sequi perferendis nam in quo reiciendis, deleniti corrupti vel sunt rem voluptatem aliquam, accusamus tempora cumque, doloribus cupiditate explicabo pariatur. Ad quia magni eum, atque molestiae dolores!
+  </main>
+  <footer>
+    <p>울산KH정보교육원</p>
+  </footer>
+</body>
+</html>
